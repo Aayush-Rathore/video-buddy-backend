@@ -7,7 +7,7 @@ export default async function ConnectDB() {
     );
     if (databaseConnection.STATES.connected) {
       console.log(
-        `Database successfully connect | ${databaseConnection.connection.host}`
+        `Database successfully connected | ${databaseConnection.connection.host}`
       );
       return true;
     } else {
