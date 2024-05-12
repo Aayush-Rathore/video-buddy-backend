@@ -62,4 +62,21 @@ UserSchema.methods.tempToken = async function () {
   );
 };
 
+UserSchema.methods.accessToken = async function () {
+  return await jwt.sign(
+    {
+      id: this._id,
+      email: this.email,
+    },
+    process.env.ACCESS_TOKEN_KEY,
+    {
+      expiresIn: process.env.ACCESS_TOKEN_EXPIRY,
+    }
+  );
+};
+
+UserSchema.methods.matchPassword = async function (password: string) {
+  return await bcrypt.compare(password, this.password);
+};
+
 export const User = model<IUser>("user", UserSchema);

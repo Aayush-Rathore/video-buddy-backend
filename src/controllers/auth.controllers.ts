@@ -26,6 +26,27 @@ class AuthController {
       res
     );
   }
+
+  public async LogIn(req: Request, res: Response) {
+    authValidation.LoginValidation(req.body);
+    const user: IUser = await authServices.Login(req.body);
+    user.password = undefined;
+    const accessToken = await user.accessToken();
+
+    res.cookie("accessToken", accessToken, {
+      httpOnly: true,
+      maxAge: 360000 * 24,
+      sameSite: "strict",
+    });
+
+    new ApiResponse(
+      StatusCode.SUCCESS,
+      StatusMessages.SUCCESS,
+      ResponseMessages.LOGIN_SUCCESS,
+      { user, accessToken: accessToken },
+      res
+    );
+  }
 }
 
 export default AuthController;

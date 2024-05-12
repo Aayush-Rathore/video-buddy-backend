@@ -13,9 +13,10 @@ export const StatusMessages = {
   SUCCESS: "Success",
   INCORRECT_PASSWORD: "Incorrect Password!",
   VALIDATION_ERROR: "Validation Failed, Try again!",
-  NOT_FOUND: "User not found!",
+  NOT_FOUND: "Resource not found!",
   INTERNAL_ERROR: "Something went wrong!",
   UNATHORIZED: "Unauthorized!",
+  NOT_VERIFIEND: "Not verified",
   NOT_GRANTED: "You do not have permission to use this service!",
   ALREADY_IN_USE: "Already in use!",
   SERVER_ERROR: "Something went wrong!",
@@ -28,10 +29,11 @@ export const ResponseMessages = {
     "Incorrect password, please try again later with different password!",
   VALIDATION_ERROR:
     "Validation Failed, Please check your request and try again by using other credentials!",
-  NOT_FOUND: "User not found, Please try again with different credentials!",
+  NOT_FOUND: "The resource which you are trying to get is not available",
   INTERNAL_ERROR:
     "Something is wrong at server side, Please try again after some time!",
   UNATHORIZED: "User is not authorized, Please login lo continue!",
+  NOT_VERIFIEND: "Account is not verifed",
   NOT_GRANTED:
     "Unauthorized, Only authorized user can access restricted services!",
   ALREADY_IN_USE: "Found an account with provided credentials",

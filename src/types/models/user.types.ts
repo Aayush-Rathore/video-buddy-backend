@@ -8,4 +8,6 @@ export interface IUser extends Document {
   isVerified: boolean;
 
   tempToken(): Promise<string>;
+  accessToken(): Promise<string>;
+  matchPassword(password: string): Promise<boolean>;
 }
