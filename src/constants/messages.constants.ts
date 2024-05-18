@@ -23,6 +23,7 @@ export const StatusMessages = {
 };
 
 export const ResponseMessages = {
+  SUCCESS: "Backend Operations successfully completed!",
   LOGIN_SUCCESS: "Loged-In successfully!",
   SIGN_UP_SUCCESS: "Successfully created a new account!",
   INCORRECT_PASSWORD:
