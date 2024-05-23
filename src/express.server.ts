@@ -1,5 +1,6 @@
 import express, { Application } from "express";
 import { rateLimit } from "express-rate-limit";
+import videoRouter from "./routes/video.routes";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
@@ -16,6 +17,12 @@ class ExpressServer {
       legacyHeaders: false,
       message: "Too Many Requests!",
     });
+    this.useMiddleware();
+    this.useRoutes();
+  }
+
+  private useRoutes() {
+    this.app.use("/api/v1/videos", videoRouter);
   }
 
   private useMiddleware() {
@@ -26,6 +33,7 @@ class ExpressServer {
         credentials: true,
       })
     );
+
     this.app.use(
       express.json({
         limit: "25kb",

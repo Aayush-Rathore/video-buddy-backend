@@ -1,6 +1,5 @@
-import "module-alias/register";
 import ConnectDB from "./database/connection/db.connection";
-import expressServer from "./server/express.server";
+import expressServer from "./express.server";
 
 (async () => {
   try {
