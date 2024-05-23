@@ -8,6 +8,7 @@ import {
 } from "../constants/messages.constants";
 import VideoServices from "../services/video.services";
 import ApiResponse from "../utils/apiResponse.utils";
+import { v4 as uuidv4 } from "uuid";
 
 class VideoControllers {
   private validationFun = new ValidationFun();

@@ -9,8 +9,8 @@ class QueueHelper {
     },
   });
 
-  public async addToQueue(videoUrl: string) {
-    await this.videoQueue.add("video-job", { videoUrl });
+  public async addToQueue(videoUrl: string, videoId: string) {
+    await this.videoQueue.add("video-job", { videoUrl, videoId });
   }
 }
 
